@@ -36,8 +36,6 @@ namespace MVVMFirma.Models.Entities
         public Nullable<int> SizeId { get; set; }
         public Nullable<int> GarmentTypeId { get; set; }
         public Nullable<int> Amount { get; set; }
-        public Nullable<int> ShopId { get; set; }
-        public Nullable<int> Amount1 { get; set; }
     
         public virtual Article Article { get; set; }
         public virtual Article Article1 { get; set; }
@@ -48,6 +46,5 @@ namespace MVVMFirma.Models.Entities
         public virtual Size Size { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalesItem> SalesItem { get; set; }
-        public virtual Shop Shop { get; set; }
     }
 }

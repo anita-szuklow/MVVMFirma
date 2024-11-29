@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f7588f5fd14643d881beec606faa48d0" Name="Diagram1">
-        <EntityTypeShape EntityType="GarmentProducerModel.Article" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Buyer" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Colour" Width="1.5" PointX="1.5" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Country" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Employee" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Garment" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.GarmentType" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Invoice" Width="1.5" PointX="12" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Payment" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Sales" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.SalesItem" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Shop" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Size" Width="1.5" PointX="0.75" PointY="27.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Status" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Supplier" Width="1.5" PointX="9.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="GarmentProducerModel.Tax" Width="1.5" PointX="1.5" PointY="24.75" IsExpanded="true" />
+      <Diagram DiagramId="13cf55479df649f1ba1ed0de19a9ca89" Name="Diagram1">
+        <EntityTypeShape EntityType="GarmentProducerModel.Article" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Buyer" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Colour" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Country" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Employee" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Garment" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.GarmentType" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Invoice" Width="1.5" PointX="9.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Payment" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Sales" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.SalesItem" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Shop" Width="1.5" PointX="1.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Size" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Status" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Supplier" Width="1.5" PointX="7.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GarmentProducerModel.Tax" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <AssociationConnector Association="GarmentProducerModel.FK_Article_Colour" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Garment_Article" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Garment_Article1" ManuallyRouted="false" />
@@ -38,7 +38,6 @@
         <AssociationConnector Association="GarmentProducerModel.FK_Payment_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Payment_Employee1" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Garment_GarmentType" ManuallyRouted="false" />
-        <AssociationConnector Association="GarmentProducerModel.FK_Garment_Shop" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Garment_Size" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_SalesItem_Garment" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_GarmentType_Tax" ManuallyRouted="false" />
@@ -48,7 +47,6 @@
         <AssociationConnector Association="GarmentProducerModel.FK_Payment_Status" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_Sales_Shop" ManuallyRouted="false" />
         <AssociationConnector Association="GarmentProducerModel.FK_SalesItem_Sales" ManuallyRouted="false" />
-        <AssociationConnector Association="GarmentProducerModel.FK_Garment_Shop1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

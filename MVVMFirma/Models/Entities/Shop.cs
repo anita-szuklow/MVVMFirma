@@ -19,7 +19,6 @@ namespace MVVMFirma.Models.Entities
         {
             this.Employee = new HashSet<Employee>();
             this.Sales = new HashSet<Sales>();
-            this.Garment = new HashSet<Garment>();
         }
     
         public int ShopId { get; set; }
@@ -30,7 +29,5 @@ namespace MVVMFirma.Models.Entities
         public virtual ICollection<Employee> Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales> Sales { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Garment> Garment { get; set; }
     }
 }

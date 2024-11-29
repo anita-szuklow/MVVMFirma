@@ -84,7 +84,6 @@
           <Property Name="Article5Id" Type="int" />
           <Property Name="Article5Amout" Type="decimal" Precision="18" Scale="0" />
           <Property Name="SizeId" Type="int" />
-          <Property Name="ShopId" Type="int" />
           <Property Name="GarmentTypeId" Type="int" />
           <Property Name="Amount" Type="int" />
         </EntityType>
@@ -322,18 +321,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Garment_Shop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
-          <End Role="Garment" Type="Self.Garment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="ShopId" />
-            </Principal>
-            <Dependent Role="Garment">
-              <PropertyRef Name="ShopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Garment_Size">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
           <End Role="Garment" Type="Self.Garment" Multiplicity="*" />
@@ -514,37 +501,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="GarmentProducerModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Buyer" EntityType="Self.Buyer" Schema="dbo" store:Type="Tables" />
@@ -601,10 +557,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Garment_GarmentType" Association="Self.FK_Garment_GarmentType">
             <End Role="GarmentType" EntitySet="GarmentType" />
-            <End Role="Garment" EntitySet="Garment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Garment_Shop" Association="Self.FK_Garment_Shop">
-            <End Role="Shop" EntitySet="Shop" />
             <End Role="Garment" EntitySet="Garment" />
           </AssociationSet>
           <AssociationSet Name="FK_Garment_Size" Association="Self.FK_Garment_Size">
@@ -770,6 +722,7 @@
           <Property Name="Article5Amout" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="SizeId" Type="Int32" />
           <Property Name="GarmentTypeId" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
           <NavigationProperty Name="Article" Relationship="Self.FK_Garment_Article" FromRole="Garment" ToRole="Article" />
           <NavigationProperty Name="Article1" Relationship="Self.FK_Garment_Article1" FromRole="Garment" ToRole="Article" />
           <NavigationProperty Name="Article2" Relationship="Self.FK_Garment_Article2" FromRole="Garment" ToRole="Article" />
@@ -778,10 +731,6 @@
           <NavigationProperty Name="GarmentType" Relationship="Self.FK_Garment_GarmentType" FromRole="Garment" ToRole="GarmentType" />
           <NavigationProperty Name="Size" Relationship="Self.FK_Garment_Size" FromRole="Garment" ToRole="Size" />
           <NavigationProperty Name="SalesItem" Relationship="Self.FK_SalesItem_Garment" FromRole="Garment" ToRole="SalesItem" />
-          <Property Name="Amount" Type="Int32" />
-          <Property Name="ShopId" Type="Int32" />
-          <NavigationProperty Name="Shop" Relationship="GarmentProducerModel.FK_Garment_Shop1" FromRole="Garment" ToRole="Shop" />
-          <Property Name="Amount1" Type="Int32" />
         </EntityType>
         <EntityType Name="GarmentType">
           <Key>
@@ -872,7 +821,6 @@
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Shop" FromRole="Shop" ToRole="Employee" />
           <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Shop" FromRole="Shop" ToRole="Sales" />
-          <NavigationProperty Name="Garment" Relationship="GarmentProducerModel.FK_Garment_Shop1" FromRole="Shop" ToRole="Garment" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -1114,18 +1062,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Garment_Shop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
-          <End Role="Garment" Type="Self.Garment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="ShopId" />
-            </Principal>
-            <Dependent Role="Garment">
-              <PropertyRef Name="ShopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Garment_Size">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
           <End Role="Garment" Type="Self.Garment" Multiplicity="*" />
@@ -1234,7 +1170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="GarmentProducerEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GarmentProducerEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Article" EntityType="Self.Article" />
           <EntitySet Name="Buyer" EntityType="Self.Buyer" />
           <EntitySet Name="Colour" EntityType="Self.Colour" />
@@ -1316,10 +1252,6 @@
             <End Role="GarmentType" EntitySet="GarmentType" />
             <End Role="Garment" EntitySet="Garment" />
           </AssociationSet>
-          <AssociationSet Name="FK_Garment_Shop" Association="Self.FK_Garment_Shop">
-            <End Role="Shop" EntitySet="Shop" />
-            <End Role="Garment" EntitySet="Garment" />
-          </AssociationSet>
           <AssociationSet Name="FK_Garment_Size" Association="Self.FK_Garment_Size">
             <End Role="Size" EntitySet="Size" />
             <End Role="Garment" EntitySet="Garment" />
@@ -1356,70 +1288,13 @@
             <End Role="Sales" EntitySet="Sales" />
             <End Role="SalesItem" EntitySet="SalesItem" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GarmentProducerModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GarmentProducerModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-          <AssociationSet Name="FK_Garment_Shop1" Association="GarmentProducerModel.FK_Garment_Shop1">
-            <End Role="Shop" EntitySet="Shop" />
-            <End Role="Garment" EntitySet="Garment" />
-          </AssociationSet>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <Association Name="FK_Garment_Shop1">
-          <End Type="GarmentProducerModel.Shop" Role="Shop" Multiplicity="0..1" />
-          <End Type="GarmentProducerModel.Garment" Role="Garment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="ShopId" />
-            </Principal>
-            <Dependent Role="Garment">
-              <PropertyRef Name="ShopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GarmentProducerModelStoreContainer" CdmEntityContainer="GarmentProducerEntities">
+        <EntityContainerMapping StorageEntityContainer="GarmentProducerModelStoreContainer" CdmEntityContainer="GarmentProducerEntities1">
           <EntitySetMapping Name="Article">
             <EntityTypeMapping TypeName="GarmentProducerModel.Article">
               <MappingFragment StoreEntitySet="Article">
@@ -1489,8 +1364,6 @@
           <EntitySetMapping Name="Garment">
             <EntityTypeMapping TypeName="GarmentProducerModel.Garment">
               <MappingFragment StoreEntitySet="Garment">
-                <ScalarProperty Name="Amount1" ColumnName="Amount" />
-                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
                 <ScalarProperty Name="GarmentId" ColumnName="GarmentId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1506,6 +1379,7 @@
                 <ScalarProperty Name="Article5Amout" ColumnName="Article5Amout" />
                 <ScalarProperty Name="SizeId" ColumnName="SizeId" />
                 <ScalarProperty Name="GarmentTypeId" ColumnName="GarmentTypeId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1634,30 +1508,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GarmentProducerModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GarmentProducerModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GarmentProducerModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GarmentProducerModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GarmentProducerModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GarmentProducerModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GarmentProducerModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GarmentProducerModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GarmentProducerModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

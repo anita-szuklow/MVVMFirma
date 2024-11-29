@@ -126,12 +126,6 @@
     <Compile Include="Models\Entities\Size.cs">
       <DependentUpon>ArticleModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ArticleModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entities\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ArticleModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entities\Status.cs">
       <DependentUpon>ArticleModel.tt</DependentUpon>
     </Compile>
@@ -458,12 +452,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\Entities\ArticleModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ArticleModel.Context.cs</LastGenOutput>
       <DependentUpon>ArticleModel.edmx</DependentUpon>
+      <LastGenOutput>ArticleModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Entities\ArticleModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
