@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{435572FA-D2A2-48CA-B905-4A7899337063}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVVMFirma</RootNamespace>
+    <AssemblyName>MVVMFirma</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="Models\Entities\Article.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ArticleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ArticleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\ArticleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Buyer.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Colour.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Country.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Employee.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Garment.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\GarmentType.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Invoice.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Payment.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Sales.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\SalesItem.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Shop.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Size.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Status.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Supplier.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\sysdiagrams.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Tax.cs">
+      <DependentUpon>ArticleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AllColoursViewModel.cs" />
+    <Compile Include="ViewModels\AllArticlesViewModel.cs" />
+    <Compile Include="ViewModels\AllBuyersViewModel.cs" />
+    <Compile Include="ViewModels\AllCountriesViewModel.cs" />
+    <Compile Include="ViewModels\AllEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\AllGarmentsViewModel.cs" />
+    <Compile Include="ViewModels\AllGarmentTypesViewModel.cs" />
+    <Compile Include="ViewModels\AllInvoicesViewModel.cs" />
+    <Compile Include="ViewModels\AllPaymentsViewModel.cs" />
+    <Compile Include="ViewModels\AllSalesViewModel.cs" />
+    <Compile Include="ViewModels\AllShopsViewModel.cs" />
+    <Compile Include="ViewModels\AllSizesViewModel.cs" />
+    <Compile Include="ViewModels\AllStatusesViewModel.cs" />
+    <Compile Include="ViewModels\AllSuppliersViewModel.cs" />
+    <Compile Include="ViewModels\AllTaxesViewModel.cs" />
+    <Compile Include="ViewModels\AllViewModel.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BuyerViewModel.cs" />
+    <Compile Include="ViewModels\ColourViewModel.cs" />
+    <Compile Include="ViewModels\CommandViewModel.cs" />
+    <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\GarmentTypeViewModel.cs" />
+    <Compile Include="ViewModels\GarmentViewModel.cs" />
+    <Compile Include="ViewModels\InvoiceViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NowyTowarViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\SalesViewModel.cs" />
+    <Compile Include="ViewModels\ShopViewModel.cs" />
+    <Compile Include="ViewModels\SizeViewModel.cs" />
+    <Compile Include="ViewModels\StatusViewModel.cs" />
+    <Compile Include="ViewModels\SupplierViewModel.cs" />
+    <Compile Include="ViewModels\TaxViewModel.cs" />
+    <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
+    <Compile Include="Views\AllArticlesView.xaml.cs">
+      <DependentUpon>AllArticlesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllBuyersView.xaml.cs">
+      <DependentUpon>AllBuyersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllColoursView.xaml.cs">
+      <DependentUpon>AllColoursView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllCountriesView.xaml.cs">
+      <DependentUpon>AllCountriesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllEmployeesView.xaml.cs">
+      <DependentUpon>AllEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllGarmentsView.xaml.cs">
+      <DependentUpon>AllGarmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllGarmentTypesView.xaml.cs">
+      <DependentUpon>AllGarmentTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllInvoicesView.xaml.cs">
+      <DependentUpon>AllInvoicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllPaymentsView.xaml.cs">
+      <DependentUpon>AllPaymentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllSalesView.xaml.cs">
+      <DependentUpon>AllSalesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllShopsView.xaml.cs">
+      <DependentUpon>AllShopsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllSizesView.xaml.cs">
+      <DependentUpon>AllSizesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllStatusesView.xaml.cs">
+      <DependentUpon>AllStatusesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllSuppliersView.xaml.cs">
+      <DependentUpon>AllSuppliersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllTaxesView.xaml.cs">
+      <DependentUpon>AllTaxesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllViewBase.cs" />
+    <Compile Include="Views\ArticleView.xaml.cs">
+      <DependentUpon>ArticleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuyerView.xaml.cs">
+      <DependentUpon>BuyerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ColourView.xaml.cs">
+      <DependentUpon>ColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CountryView.xaml.cs">
+      <DependentUpon>CountryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeView.xaml.cs">
+      <DependentUpon>EmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GarmentTypeView.xaml.cs">
+      <DependentUpon>GarmentTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GarmentView.xaml.cs">
+      <DependentUpon>GarmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceView.xaml.cs">
+      <DependentUpon>InvoiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NowyTowarView.xaml.cs">
+      <DependentUpon>NowyTowarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OneViewBase.cs" />
+    <Compile Include="Views\PaymentView.xaml.cs">
+      <DependentUpon>PaymentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesView.xaml.cs">
+      <DependentUpon>SalesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShopView.xaml.cs">
+      <DependentUpon>ShopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SizeView.xaml.cs">
+      <DependentUpon>SizeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupplierView.xaml.cs">
+      <DependentUpon>SupplierView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaxView.xaml.cs">
+      <DependentUpon>TaxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WszystkieTowaryView.xaml.cs">
+      <DependentUpon>WszystkieTowaryView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <EntityDeploy Include="Models\Entities\ArticleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ArticleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Entities\ArticleModel.edmx.diagram">
+      <DependentUpon>ArticleModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AllArticlesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllBuyersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllColoursView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllCountriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllGarmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllGarmentTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllInvoicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllPaymentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllSalesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllShopsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllSizesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllStatusesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllSuppliersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AllTaxesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArticleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuyerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CountryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GarmentTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GarmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InvoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindowResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NowyTowarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PaymentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SalesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SizeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SupplierView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WszystkieTowaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Models\Entities\ArticleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ArticleModel.Context.cs</LastGenOutput>
+      <DependentUpon>ArticleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Entities\ArticleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArticleModel.edmx</DependentUpon>
+      <LastGenOutput>ArticleModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

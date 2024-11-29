@@ -1,0 +1,25 @@
+﻿<local:AllViewBase x:Class="MVVMFirma.Views.AllPaymentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMFirma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="white">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id"/>
+                <DataGridTextColumn Header="Sales id"/>
+                <DataGridTextColumn Header="Status id"/>
+                <DataGridTextColumn Header="Amount"/>
+                <DataGridTextColumn Header="Added by employee id"/>
+                <DataGridTextColumn Header="Updated by employee id"/>
+                <DataGridTextColumn Header="Added date"/>
+                <DataGridTextColumn Header="Updated date"/>
+                <DataGridTextColumn Header="Due date"/>
+                <DataGridTextColumn Header="Is incoming"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:AllViewBase>
